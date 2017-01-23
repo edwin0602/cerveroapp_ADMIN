@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_taquillas"
+            android:icon="@drawable/ic_desktop"
+            android:title="Taquillas" />
+        <item
+            android:id="@+id/nav_usuarios"
+            android:icon="@drawable/ic_person"
+            android:title="Usuarios" />
+        <item
+            android:id="@+id/nav_premios"
+            android:icon="@drawable/ic_releases"
+            android:title="Premios" />
+        <item
+            android:id="@+id/nav_balance"
+            android:icon="@drawable/ic_equalizer"
+            android:title="Balance" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_cerrar"
+            android:icon="@drawable/ic_cance"
+            android:title="Cerrar sesion" />
+    </group>
+</menu>

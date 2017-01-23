@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Cervero Admin</string>
+    <string name="app_name_splash">Cervero <b>Admin</b></string>
+    <string name="app_dev_splash"><b>Skep</b> Software</string>
+
+    <string name="app_error_msg"><b>Lo sentimos,</b> ha ocurrido un error</string>
+
+    <string name="activity_group">Seleccione un grupo</string>
+    <string name="activity_ticket">Detalle del Ticket</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_sign_in">Iniciar sesion</string>
+    <string name="action_sign_in_short">Log In</string>
+
+    <string name="prompt_username">Nombre de usuario</string>
+    <string name="prompt_password">Contraseña</string>
+
+    <string name="info_textview"><b>Cervero Admin</b> es una aplicaci\u00f3n de uso privado, no comercial queda prohibida su reproducci\u00f3n.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_invalid_password">La contraseña no es valida</string>
+    <string name="error_field_required">No puede estar vacio</string>
+    <string name="error_invalid_user">Usuario no valido</string>
+    <string name="action_update_groups">Actualizar grupos</string>
+</resources>

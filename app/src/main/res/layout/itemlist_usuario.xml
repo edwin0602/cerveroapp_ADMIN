@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:padding="0dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="5dp">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <LinearLayout android:id="@+id/thumbnail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dip"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/image_bg"
+                android:layout_marginRight="5dip">
+
+                <ImageView
+                    android:id="@+id/user_item_image"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
+                    android:src="@drawable/ic_male"/>
+
+            </LinearLayout>
+
+            <!-- Nombre-->
+            <TextView
+                android:id="@+id/user_item_nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/thumbnail"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:text="Rihanna Love the way lie"
+                android:textColor="#040404"
+                android:typeface="sans"
+                android:textSize="15dip"
+                android:textStyle="bold"/>
+
+            <!-- Codigo -->
+            <TextView
+                android:id="@+id/user_item_codigo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/user_item_nombre"
+                android:textColor="#343434"
+                android:textSize="10dip"
+                android:layout_marginTop="1dip"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:text="Just gona stand there and ..." />
+
+            <!-- Estado -->
+            <TextView
+                android:id="@+id/user_item_estado"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/user_item_codigo"
+                android:textColor="#343434"
+                android:textSize="10dip"
+                android:layout_marginTop="1dip"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:text="Just gona stand there and ..." />
+
+            <!-- Hora -->
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/user_item_nombre"
+                android:gravity="right"
+                android:text="5:45"
+                android:layout_marginRight="5dip"
+                android:textSize="10dip"
+                android:textColor="#10bcc9"
+                android:textStyle="bold"/>
+
+            <!-- Rightend Arrow -->
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
