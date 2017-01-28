@@ -1,0 +1,302 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cerverodesing.cervero_admin.BalanceFragment"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <Button
+            android:text="INICIAL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonStart"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_event"
+            android:textColor="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#58ffffff"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:text="FINAL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonEnd"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_event"
+            android:textColor="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#58ffffff"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp" />
+
+        <ImageButton
+            android:src="@drawable/ic_check"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonSend"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_event"
+            android:textColor="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="10dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:text="SELECIONE LAS FECHAS DEL INFORME"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:id="@+id/textViewBackBalance"
+        android:textAlignment="center" />
+
+    <RelativeLayout
+        android:visibility="invisible"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.00"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:id="@+id/LayoutVenta">
+
+        <TextView
+            android:text="$20.000.000.000.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewVenta"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="209 TICKETS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewVenta"
+            android:id="@+id/textViewVentaItem"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:textSize="10sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="invisible"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/LayoutPremios">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Premios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView15"
+                    android:textAlignment="viewStart"
+                    android:textStyle="normal|bold"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:text="100 Tickets"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPremiosItem"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:text="$ 20.000.000.00"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewPremios"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Pendientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textStyle="normal|bold"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:text="100 Tickets"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewGanadoItem"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:text="$ 20.000.000.00"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewGanado"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Pagados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textStyle="normal|bold"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:text="100 Tickets"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPagadoItem"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:text="$ 20.000.000.00"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewPagado"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Caducados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textStyle="normal|bold"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:text="100 Tickets"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewCaducadoItem"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:text="$ 20.000.000.00"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewCaducado"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

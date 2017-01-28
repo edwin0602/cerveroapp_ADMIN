@@ -23,15 +23,16 @@ public class EquipoAdapter extends RecyclerView.Adapter<EquipoAdapter.EquipoView
         TextView equipoName;
         TextView equipoID;
         TextView equipoEstado;
-        ImageView equipoIcon;
-        LinearLayout equipoIconMarkup;
+        TextView equipoCode;
+        LinearLayout equipoMarkup;
 
         EquipoViewHolder(View itemView) {
             super(itemView);
-            equipoIcon = (ImageView)itemView.findViewById(R.id.equipo_item_image);
             equipoName = (TextView)itemView.findViewById(R.id.equipo_item_nombre);
             equipoID = (TextView)itemView.findViewById(R.id.equipo_item_codigo);
             equipoEstado = (TextView)itemView.findViewById(R.id.equipo_item_estado);
+            equipoCode = (TextView)itemView.findViewById(R.id.equipo_item_install);
+            equipoMarkup = (LinearLayout)itemView.findViewById(R.id.equipo_item_icon);
         }
     }
 
@@ -54,10 +55,10 @@ public class EquipoAdapter extends RecyclerView.Adapter<EquipoAdapter.EquipoView
         Equipo current = items.get(i);
 
         holder.equipoName.setText(current.Nombre);
-        holder.equipoID.setText("Cod. " + current.Codigo + " | " + current.Codigo_instalacion);
-        holder.equipoEstado.setText("Estado " + current.getEstado());
-
-        DrawableCompat.setTint(holder.equipoIcon.getDrawable(), Color.parseColor(current.getColor()));
+        holder.equipoID.setText("Cod. " + current.Codigo);
+        holder.equipoEstado.setText(current.getEstado());
+        holder.equipoCode.setText(current.Codigo_instalacion);
+        holder.equipoMarkup.setBackgroundColor(Color.parseColor(current.getColor()));
     }
 
     @Override

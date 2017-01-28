@@ -15,6 +15,10 @@
             android:icon="@drawable/ic_releases"
             android:title="Premios" />
         <item
+            android:id="@+id/nav_pagos"
+            android:icon="@drawable/ic_money"
+            android:title="Pagos" />
+        <item
             android:id="@+id/nav_balance"
             android:icon="@drawable/ic_equalizer"
             android:title="Balance" />

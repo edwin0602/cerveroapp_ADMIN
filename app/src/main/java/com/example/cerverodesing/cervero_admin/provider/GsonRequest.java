@@ -83,11 +83,18 @@ public class GsonRequest<T> extends Request<T> {
 
     @Override
     protected VolleyError parseNetworkError(VolleyError volleyError) {
+
+        String causa = volleyError.toString();
+
         if (volleyError.networkResponse != null && volleyError.networkResponse.data != null) {
             VolleyError error = new VolleyError(new String(volleyError.networkResponse.data));
             volleyError = error;
+        } else {
+            VolleyError error = new VolleyError(causa);
+            volleyError = error;
         }
 
+        this.EndOfRequest.Finally(null);
         return volleyError;
     }
 }

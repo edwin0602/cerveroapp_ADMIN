@@ -8,6 +8,8 @@
     <string name="activity_group">Seleccione un grupo</string>
     <string name="activity_ticket">Detalle del Ticket</string>
 
+    <string name="action_reintent">Reintentar</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -26,4 +28,6 @@
     <string name="error_field_required">No puede estar vacio</string>
     <string name="error_invalid_user">Usuario no valido</string>
     <string name="action_update_groups">Actualizar grupos</string>
+    <string name="action_cambiar_grupo">Cambiar grupo</string>
+    <string name="action_cerrar_sesion">Cerrar sesion</string>
 </resources>

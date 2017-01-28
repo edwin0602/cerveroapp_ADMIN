@@ -37,7 +37,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.cerverodesing.cervero_admin.MainActivity" />
         </activity>
-        <activity android:name=".TicketActivity"
+        <activity
+            android:name=".TicketActivity"
             android:label="@string/activity_ticket"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

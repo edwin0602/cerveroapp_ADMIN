@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -34,6 +35,16 @@ public class SplashActivity extends Activity {
 
         txtError = (TextView)findViewById(R.id.SplashTextError);
         btnError = (Button)findViewById(R.id.SplashLoginbutton);
+
+        btnError.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtError.setVisibility(View.INVISIBLE);
+                btnError.setVisibility(View.INVISIBLE);
+
+                ValidarSession();
+            }
+        });
 
         LaunchAnimation();
         ValidarSession();
@@ -72,10 +83,7 @@ public class SplashActivity extends Activity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        txtError.setVisibility(View.VISIBLE);
-                        btnError.setVisibility(View.VISIBLE);
-
-                        Log.d("Login", "Error inesperado: " + error.getMessage());
+                       SetError(error.getMessage());
                     }
                 }
         );
@@ -93,12 +101,16 @@ public class SplashActivity extends Activity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        txtError.setVisibility(View.VISIBLE);
-                        btnError.setVisibility(View.VISIBLE);
-
-                        Log.d("Grupos:", "Error inesperado: " + volleyError.getMessage());
+                        SetError(volleyError.getMessage());
                     }
                 }
         );
+    }
+
+    private void SetError(String error){
+        txtError.setVisibility(View.VISIBLE);
+        btnError.setVisibility(View.VISIBLE);
+
+        Toast.makeText(this.getApplicationContext(),error, Toast.LENGTH_SHORT);
     }
 }

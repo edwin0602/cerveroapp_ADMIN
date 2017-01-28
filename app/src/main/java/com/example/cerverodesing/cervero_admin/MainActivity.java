@@ -1,11 +1,13 @@
 package com.example.cerverodesing.cervero_admin;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     static final int PICK_GROUPS_REQUEST = 1;
     TextView TextViewGrupo;
+    TextView TextViewGrupoCollapse;
+
+    FloatingActionButton fabBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +42,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+        TextViewGrupoCollapse = (TextView)findViewById(R.id.textGrupo);
+        TextViewGrupoCollapse.setText(cervero_provider.MY_CURRENT_GROUP.m_Item2);
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         View hView = navigationView.getHeaderView(0);
         TextViewGrupo = (TextView)hView.findViewById(R.id.textViewGrupo);
-
         TextViewGrupo.setText(cervero_provider.MY_CURRENT_GROUP.m_Item2);
 
+        fabBtn = (FloatingActionButton)findViewById(R.id.btnFab);
+    }
+
+    public FloatingActionButton getFloatingActionButton() {
+        return fabBtn;
     }
 
     @Override
@@ -85,18 +97,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Fragment fragment = null;
         Class fragmentClass;
 
+        fabBtn.setVisibility(View.INVISIBLE);
+
         switch(item.getItemId()) {
             case R.id.nav_taquillas:
                 fragmentClass = TaquillasFragment.class;
                 break;
             case R.id.nav_balance:
-                fragmentClass = UsuariosFragment.class;
+                fragmentClass = BalanceFragment.class;
                 break;
             case R.id.nav_premios:
                 fragmentClass = PremiosFragment.class;
                 break;
             case R.id.nav_usuarios:
                 fragmentClass = UsuariosFragment.class;
+                break;
+            case R.id.nav_pagos:
+                fragmentClass = PagosFragment.class;
                 break;
             default:
                 fragmentClass = UsuariosFragment.class;
@@ -112,6 +129,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
 
         item.setChecked(true);
+
+        getSupportActionBar().setTitle(item.getTitle());
         setTitle(item.getTitle());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -124,12 +143,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivityForResult(intent, PICK_GROUPS_REQUEST);
     }
 
+    public void CerrarSesion(MenuItem item){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Desea cerrar la sesion?").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        cervero_provider.removeLoginCredentials(MainActivity.this.getApplicationContext());
+                        MainActivity.this.finishAffinity();
+                    }
+                }).setNegativeButton("Cancelar", null);
+
+        builder.show();
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PICK_GROUPS_REQUEST) {
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "Grupo seleccionado: " + cervero_provider.MY_CURRENT_GROUP.m_Item2, Toast.LENGTH_SHORT).show();
                 TextViewGrupo.setText(cervero_provider.MY_CURRENT_GROUP.m_Item2);
+                TextViewGrupoCollapse.setText(cervero_provider.MY_CURRENT_GROUP.m_Item2);
             }
         }
     }
